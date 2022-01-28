@@ -7,6 +7,7 @@ li=[]
 ly=[]
 toa=[]
 Toa=[]
+Toaa=[]
 with open('../../code/Donnee.csv', newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=';')
     for row in spamreader:
@@ -15,11 +16,17 @@ for i in range(len(li)):
     ly.append(li[i].split(';'))
 for i in range(1,len(ly)):
     a=int(ly[i][8])
+    b=int(ly[i][5])
+    Toaa.append(b)
     toa.append(a)
 
-for i in range(0, len(toa)):
-    b = (toa[i] * 99) / 1000
+for i in range(0, len(ly)-1):
+
+    b = (Toaa[i] * 99)
+    b=b/1000
+
     Toa.append(b)
+
 
 def ComputeMean():
     mean7 = 0
@@ -68,6 +75,7 @@ def ComputeMean():
     mean11 = round(mean11, 2)
     mean12=mean12/(cont12)
     mean12=round(mean12,2)
+
     print("Le temps d'envoie moyen pour un spreding factor de 7 est de : ",mean7,'secondes')
     print("Le temps d'envoie moyen pour un spreding factor de 8 est de : ", mean8,'secondes')
     print("Le temps d'envoie moyen pour un spreding factor de 9 est de : ", mean9,'secondes')
@@ -125,13 +133,14 @@ def ComputeMedian():
     cont10 = len(med10) // 2
     cont11 = len(med11) // 2
     cont12 = len(med12) // 2
+    print(med11)
 
-    print("Le temps médian d'envoie avec un spreading factor de 7 est de  ", med7[cont7])
-    print("Le temps médian d'envoie avec un spreading factor de 8 est de  ", med8[cont8])
-    print("Le temps médian d'envoie avec un spreading factor de 9 est de  ", med9[cont9])
-    print("Le temps médian d'envoie avec un spreading factor de 10 est de  ", med10[cont10])
-    print("Le temps médian d'envoie avec un spreading factor de 11 est de  ", med11[cont11])
-    print("Le temps médian d'envoie avec un spreading factor de 12 est de  ", med12[cont12])
+    print("Le temps médian d'envoie avec un spreading factor de 7 est de  ", med7[cont7],'secondes')
+    print("Le temps médian d'envoie avec un spreading factor de 8 est de  ", med8[cont8],'secondes')
+    print("Le temps médian d'envoie avec un spreading factor de 9 est de  ", med9[cont9],'secondes')
+    print("Le temps médian d'envoie avec un spreading factor de 10 est de  ", med10[cont10],'secondes')
+    print("Le temps médian d'envoie avec un spreading factor de 11 est de  ", med11[cont11],'secondes')
+    print("Le temps médian d'envoie avec un spreading factor de 12 est de  ", med12[cont12],'secondes')
 
 
     median=toa[a]
