@@ -133,7 +133,7 @@ def ComputeMedian():
     cont10 = len(med10) // 2
     cont11 = len(med11) // 2
     cont12 = len(med12) // 2
-    print(med11)
+    
 
     print("Le temps médian d'envoie avec un spreading factor de 7 est de  ", med7[cont7],'secondes')
     print("Le temps médian d'envoie avec un spreading factor de 8 est de  ", med8[cont8],'secondes')
@@ -151,9 +151,9 @@ def ComputeMedian():
 
 
 
-
+print('')
 ComputeMedian()
-
+print('')
 ComputeMean()
 
 
