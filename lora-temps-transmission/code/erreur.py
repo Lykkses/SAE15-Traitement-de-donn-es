@@ -18,6 +18,7 @@ erreur8=0
 erreur9=0
 erreur10=0
 erreur11=0
+erreuri=[]
 
 with open('Donnee.csv', newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=';')
@@ -53,6 +54,27 @@ for i in range(1,len(li)):
 erreur=+erreur1+erreur0+erreur2+erreur3+erreur4+erreur5+erreur6+erreur7+erreur8+erreur9+erreur10+erreur11
 
 
+
+erreuri.append(erreur0)
+erreuri.append(erreur1)
+erreuri.append(erreur2)
+erreuri.append(erreur3)
+erreuri.append(erreur4)
+erreuri.append(erreur5)
+erreuri.append(erreur6)
+erreuri.append(erreur7)
+erreuri.append(erreur8)
+erreuri.append(erreur9)
+erreuri.append(erreur10)
+erreuri.append(erreur11)
+
+
+
+
+for i in range (12):
+    err='erreur'+str(i)
+    print("le nombre d'erreur pour la colonne {} est de : {}".format(ly[0][i],erreuri[i]))
+print("le nombre d'érreur total est de : ",erreur)
 erreur=(erreur/(len(li)*11))*100
 print("le pourcentage d'erreurs est de :",round(erreur,2))
 for i in range(1,len(li)):
@@ -62,7 +84,7 @@ for i in range(0,len(toa)):
     b=(toa[i]*99)/1000
     Toa.append(b)
 
-print( "le temps de transmission :",Toa)
+print( "le temps de transmission  des données est de :",Toa)
 
 
 
