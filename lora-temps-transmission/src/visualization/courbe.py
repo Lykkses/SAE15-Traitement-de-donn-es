@@ -137,10 +137,8 @@ def courbe():
 
         y.append(b)
 
-        if c == 125000:
-            l.append(250)
-            l2.append(b)
-        elif c == 125:
+
+        if c == 125:
             l.append(a)
             l2.append(b)
         elif c == 250:
